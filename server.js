@@ -16,6 +16,7 @@ mongoose.Promise = Promise;
 
 // Initialize Express
 var app = express();
+var PORT = process.env.PORT || 3000;
 
 //set up our handlebars front end
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -31,11 +32,14 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
+var databaseUri = "mongodb://localhost/news-scraper";
+
 if (process.env.MONGODB_URI) {
- mongoose.connect(process.env.MONGODB_URI);
-}
-else {
-  mongoose.connect("mongodb://localhost/news-scraper");
+ mongoose.connect(process.env.MONGODB_URI, {
+ useMongoClient: true
+ });
+} else {
+  mongoose.connect(databaseUri, {useMongoClient: true}); 
 }
 
 var db = mongoose.connection;
@@ -56,6 +60,6 @@ app.use(require('./controllers/routes'));
 
 
 // Listen on port 3000
-app.listen(3000, function() {
-  console.log("App running on port 3000!");
+app.listen(PORT, function() {
+  console.log("App running on PORT " + PORT);
 });
