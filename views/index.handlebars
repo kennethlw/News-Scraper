@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+      <h1 class="display-3 text-center">Reddit News Scraper</h1>
+      <p class="lead text-center">This is a simple app, used to scrape articles from Reddit website.</p>
+        <div class="navbar-header">
+        <a href="/">
+          <span class="navbar-brand center"></span>
+        </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav nav">
+            <li class="active">
+              <a href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li>
+              <a href="/saved">Saved Articles</a>
+            </li>
+          </ul>
+          <button type="button" id="scrape" class="btn btn-primary navbar-btn">Scrape New Articles</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container main">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="all-articles"></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="scrape-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 class="text-center" id="scrape-text"></h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/index.js"></script>

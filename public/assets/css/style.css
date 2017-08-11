@@ -1,0 +1,23 @@
+body {
+  background-image: url("https://images.alphacoders.com/212/212643.jpg");
+  background-position: center;
+  background-size: 100%; 
+}
+
+.jumbotron, .panel-body {
+	background-color: lightgrey;
+	opacity: 0.97;
+}
+
+.panel-heading {
+	opacity: 0.95;
+}
+
+#all-articles, #saved-articles {
+	opacity: 0.95;
+}
+
+h1, p {
+	color: black;
+	font-weight: bold;
+}
